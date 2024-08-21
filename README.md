@@ -4,6 +4,7 @@ Terraform modules for Databricks community edition
 
 ## Links
 
+* [Databricks Community Edition](https://community.cloud.databricks.com/)
 * [Databricks Terraform provider](https://registry.terraform.io/providers/databricks/databricks/latest/docs)
 * [Documentation for Databricks Terraform provider](https://docs.databricks.com/en/dev-tools/terraform/index.html)
 * [What is the Databricks CLI?](https://docs.databricks.com/en/dev-tools/cli/index.html)
