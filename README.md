@@ -9,7 +9,7 @@ Terraform modules for Databricks community edition
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 ```
-1. Install Databricks CLI
+2. Install Databricks CLI (optional)
 ```bash
 brew tap databricks/tap
 brew install databricks
@@ -28,15 +28,15 @@ with content:
 databricks_username = "***"
 databricks_password = "***
 ```
-1. Initialize Terraform:
+2. Initialize Terraform:
 ```bash
 terraform init
 ```
-1. Plan and apply code:
+3. Plan and apply code:
 ```bash
 terraform apply
 ```
-1. Test code:
+4. Test code:
 ```bash
 terraform test
 ```
