@@ -1,3 +1,19 @@
+variable "databricks_host" {
+  description = "The hostname for Databricks."
+  type        = string
+  default     = "https://community.cloud.databricks.com"
+}
+
+variable "databricks_username" {
+  description = "The username for Databricks."
+  type        = string
+}
+
+variable "databricks_password" {
+  description = "The password for Databricks."
+  type        = string
+}
+
 variable "notebook_subdirectory" {
   description = "A name for the subdirectory to store the notebook."
   type        = string
@@ -16,10 +32,16 @@ variable "notebook_language" {
   default     = "PYTHON"
 }
 
+variable "cluster_create" {
+  description = "Whether to create the cluster."
+  type        = bool
+  default     = false
+}
+
 variable "cluster_name" {
   description = "A name for the cluster."
   type        = string
-  default     = "demo-cluster"
+  default     = "micro-cluster"
 }
 
 variable "cluster_autotermination_minutes" {
@@ -32,4 +54,10 @@ variable "cluster_num_workers" {
   description = "The number of workers."
   type        = number
   default     = 1
+}
+
+variable "cluster_runtime_engine" {
+  description = "The runtime engine for the cluster."
+  type        = string
+  default     = "STANDARD"
 }
