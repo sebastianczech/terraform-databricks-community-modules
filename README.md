@@ -24,6 +24,9 @@ databricks configure
   * [Documentation for Databricks Terraform provider](https://docs.databricks.com/en/dev-tools/terraform/index.html)
   * [Databricks authentication types](https://docs.databricks.com/en/dev-tools/auth/index.html#databricks-client-unified-authentication)
   * [What is the Databricks CLI?](https://docs.databricks.com/en/dev-tools/cli/index.html)
+  * [Databricks Utilities (dbutils)](https://docs.databricks.com/en/dev-tools/databricks-utils.html)
+  * [What are Databricks Asset Bundles?](https://docs.databricks.com/en/dev-tools/bundles/index.html)
+  * [What is CI/CD on Databricks?](https://docs.databricks.com/en/dev-tools/ci-cd.html)
 * Code:
   * [Databricks Terraform provider](https://registry.terraform.io/providers/databricks/databricks/latest/docs)
   * [Example Repo Used in Get Started with Data Engineering on Databricks](https://github.com/databricks-academy/get-started-with-data-engineering-on-databricks-repo-example)
