@@ -9,12 +9,32 @@ Terraform modules for Databricks community edition
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 ```
-2. Install and configure Databricks CLI
+1. Install Databricks CLI
 ```bash
 brew tap databricks/tap
 brew install databricks
+```
 
+## Usage
+
+Terraform code requires PAT (personal access token), which is NOT available for Databricks community edition.
+In order
+
+1. Configure authentication to Databricks:
+```bash
 databricks configure
+```
+2. Initialize Terraform:
+```bash
+terraform init
+```
+3. Plan and apply code:
+```bash
+terraform apply
+```
+4. Test code:
+```bash
+terraform test
 ```
 
 ## Links
