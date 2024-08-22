@@ -61,3 +61,9 @@ variable "cluster_runtime_engine" {
   type        = string
   default     = "STANDARD"
 }
+
+variable "library_pypi_packages" {
+  description = "A list of PyPI libraries to install."
+  type        = list(string)
+  default     = ["mlflow", "pandas"]
+}

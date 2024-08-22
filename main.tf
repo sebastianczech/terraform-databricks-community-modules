@@ -49,3 +49,16 @@ data "databricks_cluster" "this" {
   count        = var.cluster_create ? 0 : 1
   cluster_name = var.cluster_name
 }
+
+locals {
+  cluster_id = var.cluster_create ? databricks_cluster.this[0].id : data.databricks_cluster.this[0].id
+}
+
+# https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/library
+resource "databricks_library" "this" {
+  for_each   = { for package in var.library_pypi_packages : package => package }
+  cluster_id = local.cluster_id
+  pypi {
+    package = each.value
+  }
+}

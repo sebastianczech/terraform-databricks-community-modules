@@ -5,5 +5,10 @@ output "notebook_url" {
 
 output "cluster_id" {
   description = "The ID of the cluster."
-  value       = var.cluster_create ? databricks_cluster.this[0].id : data.databricks_cluster.this[0].id
+  value       = local.cluster_id
+}
+
+output "library_id" {
+  description = "The ID of the library."
+  value       = { for k, v in databricks_library.this : k => v.id }
 }
