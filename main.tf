@@ -1,8 +1,15 @@
+# https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/directory
+resource "databricks_directory" "this" {
+  path = "/Users/${var.databricks_username}/${var.notebook_subdirectory}"
+}
+
 # https://registry.terraform.io/providers/databricks/databricks/latest/docs/resources/notebook
 resource "databricks_notebook" "this" {
   path     = "/Users/${var.databricks_username}/${var.notebook_subdirectory}/${var.notebook_filename}"
   language = var.notebook_language
   source   = "./${var.notebook_filename}"
+
+  depends_on = [databricks_directory.this]
 }
 
 # https://registry.terraform.io/providers/databricks/databricks/latest/docs/data-sources/node_type
