@@ -40,6 +40,16 @@ terraform apply
 ```bash
 terraform test
 ```
+5. Check deployment:
+```
+databricks clusters list
+databricks clusters get 0822-220313-bq1y6f3g
+databricks libraries cluster-status 0822-220313-bq1y6f3g
+
+databricks workspace list "/Users"
+databricks workspace list "/Users/sebaczech@gmail.com"
+databricks workspace list "/Users/sebaczech@gmail.com/Terraform"
+```
 
 ## Links
 
