@@ -17,23 +17,26 @@ brew install databricks
 
 ## Usage
 
-Terraform code requires PAT (personal access token), which is NOT available for Databricks community edition.
+Terraform can authenticate using multiple methods, but most of them are not available in Databricks community edition e.g. PAT (personal access token). That's why in below example username and password was used. In order to deploy Terraform code, please follow below steps:
 
-In order to deploy Terraform code, please follow below steps:
-
-1. Configure authentication to Databricks:
+1. Create `terraform.auto.tfvars`
 ```bash
-databricks configure
+vi terraform.auto.tfvars
 ```
-2. Initialize Terraform:
+with content:
+```hcl
+databricks_username = "***"
+databricks_password = "***
+```
+1. Initialize Terraform:
 ```bash
 terraform init
 ```
-3. Plan and apply code:
+1. Plan and apply code:
 ```bash
 terraform apply
 ```
-4. Test code:
+1. Test code:
 ```bash
 terraform test
 ```
