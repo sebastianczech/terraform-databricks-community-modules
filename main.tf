@@ -25,23 +25,6 @@ resource "databricks_cluster" "this" {
   num_workers             = var.cluster_num_workers
   spark_version           = data.databricks_spark_version.this.id
   runtime_engine          = var.cluster_runtime_engine
-
-  aws_attributes {
-    availability           = "ON_DEMAND"
-    ebs_volume_count       = 0
-    first_on_demand        = 0
-    spot_bid_price_percent = 100
-    zone_id                = "auto"
-  }
-
-
-  spark_conf = {
-    "spark.databricks.rocksDB.fileManager.useCommitService" : false
-  }
-
-  spark_env_vars = {
-    "PYSPARK_PYTHON" : "/databricks/python3/bin/python3"
-  }
 }
 
 # https://registry.terraform.io/providers/databricks/databricks/latest/docs/data-sources/cluster
