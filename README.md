@@ -18,7 +18,8 @@ brew install databricks
 ## Usage
 
 Terraform code requires PAT (personal access token), which is NOT available for Databricks community edition.
-In order
+
+In order to deploy Terraform code, please follow below steps:
 
 1. Configure authentication to Databricks:
 ```bash
@@ -39,7 +40,9 @@ terraform test
 
 ## Links
 
-* [Databricks Community Edition](https://community.cloud.databricks.com/)
+* Platform:
+  * [Databricks Community Edition](https://community.cloud.databricks.com/)
+  * [Try Databricks free](https://www.databricks.com/try-databricks)
 * Documentation:
   * [Documentation for Databricks Terraform provider](https://docs.databricks.com/en/dev-tools/terraform/index.html)
   * [Databricks authentication types](https://docs.databricks.com/en/dev-tools/auth/index.html#databricks-client-unified-authentication)
