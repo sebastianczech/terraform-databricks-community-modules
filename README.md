@@ -14,6 +14,7 @@ brew install hashicorp/tap/terraform
 brew tap databricks/tap
 brew install databricks
 ```
+3. [Sign up for Databricks Community edition](https://docs.databricks.com/en/getting-started/community-edition.html)
 
 ## Usage
 
