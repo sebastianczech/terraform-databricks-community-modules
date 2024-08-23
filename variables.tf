@@ -23,7 +23,6 @@ variable "notebook_subdirectory" {
 variable "notebook_filename" {
   description = "The notebook's filename."
   type        = string
-  default     = "notebook.py"
 }
 
 variable "notebook_language" {
@@ -41,7 +40,6 @@ variable "cluster_create" {
 variable "cluster_name" {
   description = "A name for the cluster."
   type        = string
-  default     = "micro-cluster"
 }
 
 variable "cluster_autotermination_minutes" {
@@ -65,5 +63,5 @@ variable "cluster_runtime_engine" {
 variable "library_pypi_packages" {
   description = "A list of PyPI libraries to install."
   type        = list(string)
-  default     = ["mlflow", "pandas"]
+  default     = []
 }

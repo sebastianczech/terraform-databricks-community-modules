@@ -113,7 +113,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_cluster_autotermination_minutes"></a> [cluster\_autotermination\_minutes](#input\_cluster\_autotermination\_minutes) | How many minutes before automatically terminating due to inactivity. | `number` | `60` | no |
 | <a name="input_cluster_create"></a> [cluster\_create](#input\_cluster\_create) | Whether to create the cluster. | `bool` | `false` | no |
-| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | A name for the cluster. | `string` | `"micro-cluster"` | no |
+| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | A name for the cluster. | `string` | n/a | yes |
 | <a name="input_cluster_num_workers"></a> [cluster\_num\_workers](#input\_cluster\_num\_workers) | The number of workers. | `number` | `1` | no |
 | <a name="input_cluster_runtime_engine"></a> [cluster\_runtime\_engine](#input\_cluster\_runtime\_engine) | The runtime engine for the cluster. | `string` | `"STANDARD"` | no |
 | <a name="input_databricks_host"></a> [databricks\_host](#input\_databricks\_host) | The hostname for Databricks. | `string` | `"https://community.cloud.databricks.com"` | no |
