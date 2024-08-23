@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/sebastianczech/terraform-databricks-community-modules/compare/v1.0.0...v1.1.0) (2024-08-23)
+
+### Features
+
+* Basic example ([#2](https://github.com/sebastianczech/terraform-databricks-community-modules/issues/2)) ([60a06d4](https://github.com/sebastianczech/terraform-databricks-community-modules/commit/60a06d47a78cc7f901cc2b39c9b357002ac7e186))
+
 ## 1.0.0 (2024-08-23)
 
 ### Miscellaneous Chores
