@@ -7,7 +7,7 @@
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 ```
-2. Install Databricks CLI (optional)
+2. Install Databricks CLI
 ```bash
 brew tap databricks/tap
 brew install databricks
@@ -32,11 +32,22 @@ databricks_password = "***
 ```bash
 terraform init
 ```
-3. Plan and apply code:
+3. Create cluster via UI with below options (as it's not possible via CLI or Terraform for community edition):
+```bash
+databricks clusters create --json '{
+  "autotermination_minutes": 60,
+  "cluster_name": "micro-cluster",
+  "node_type_id": "dev-tier-node",
+  "num_workers": 1,
+  "runtime_engine": "STANDARD",
+  "spark_version": "15.4.x-scala2.12"
+}'
+```
+4. Plan and apply code:
 ```bash
 terraform apply -var-file example.tfvars
 ```
-4. Check deployment:
+5. Check deployment:
 ```
 databricks clusters list
 databricks clusters get <CLUSTER-ID>
@@ -46,7 +57,7 @@ databricks workspace list "/Users"
 databricks workspace list "/Users/<USERNAME>"
 databricks workspace list "/Users/<USERNAME>/Terraform"
 ```
-5. Test code (in module directory, not example):
+6. Test code (in module directory, not example):
 ```bash
 cd ../../
 terraform test
