@@ -20,8 +20,9 @@ brew install databricks
 
 Terraform can authenticate using multiple methods, but most of them are not available in Databricks community edition e.g. PAT (personal access token). That's why in below example username and password was used. In order to deploy Terraform code, please follow below steps:
 
-1. Create `terraform.auto.tfvars`
+1. Go to example directory and create `terraform.auto.tfvars`
 ```bash
+cd examples/basic
 vi terraform.auto.tfvars
 ```
 with content:
@@ -35,13 +36,9 @@ terraform init
 ```
 3. Plan and apply code:
 ```bash
-terraform apply
+terraform apply -var-file example.tfvars
 ```
-4. Test code:
-```bash
-terraform test
-```
-5. Check deployment:
+4. Check deployment:
 ```
 databricks clusters list
 databricks clusters get <CLUSTER-ID>
@@ -50,6 +47,11 @@ databricks libraries cluster-status <CLUSTER-ID>
 databricks workspace list "/Users"
 databricks workspace list "/Users/<USERNAME>"
 databricks workspace list "/Users/<USERNAME>/Terraform"
+```
+5. Test code (in module directory, not example):
+```bash
+cd ../../
+terraform test
 ```
 
 ## Links
