@@ -1,6 +1,4 @@
-# terraform-databricks-community-modules
-
-Terraform modules for Databricks community edition
+# Terraform modules for deploying notebook in Databricks community edition
 
 ## Prerequisites
 
