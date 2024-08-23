@@ -1,6 +1,4 @@
-# terraform-databricks-community-modules
-
-Terraform modules for Databricks community edition
+# Terraform modules for deploying notebook in Databricks community edition
 
 ## Prerequisites
 
@@ -9,7 +7,7 @@ Terraform modules for Databricks community edition
 brew tap hashicorp/tap
 brew install hashicorp/tap/terraform
 ```
-2. Install Databricks CLI (optional)
+2. Install Databricks CLI
 ```bash
 brew tap databricks/tap
 brew install databricks
@@ -20,8 +18,9 @@ brew install databricks
 
 Terraform can authenticate using multiple methods, but most of them are not available in Databricks community edition e.g. PAT (personal access token). That's why in below example username and password was used. In order to deploy Terraform code, please follow below steps:
 
-1. Create `terraform.auto.tfvars`
+1. Go to example directory and create `terraform.auto.tfvars`
 ```bash
+cd examples/basic
 vi terraform.auto.tfvars
 ```
 with content:
@@ -33,13 +32,20 @@ databricks_password = "***
 ```bash
 terraform init
 ```
-3. Plan and apply code:
+3. Create cluster via UI with below options (as it's not possible via CLI or Terraform for community edition):
 ```bash
-terraform apply
+databricks clusters create --json '{
+  "autotermination_minutes": 60,
+  "cluster_name": "micro-cluster",
+  "node_type_id": "dev-tier-node",
+  "num_workers": 1,
+  "runtime_engine": "STANDARD",
+  "spark_version": "15.4.x-scala2.12"
+}'
 ```
-4. Test code:
+4. Plan and apply code:
 ```bash
-terraform test
+terraform apply -var-file example.tfvars
 ```
 5. Check deployment:
 ```
@@ -50,6 +56,11 @@ databricks libraries cluster-status <CLUSTER-ID>
 databricks workspace list "/Users"
 databricks workspace list "/Users/<USERNAME>"
 databricks workspace list "/Users/<USERNAME>/Terraform"
+```
+6. Test code (in module directory, not example):
+```bash
+cd ../../
+terraform test
 ```
 
 ## Links
@@ -66,6 +77,7 @@ databricks workspace list "/Users/<USERNAME>/Terraform"
   * [What is CI/CD on Databricks?](https://docs.databricks.com/en/dev-tools/ci-cd.html)
 * Code:
   * [Databricks Terraform provider](https://registry.terraform.io/providers/databricks/databricks/latest/docs)
+  * [Databricks Asset Bundles examples](https://github.com/databricks/bundle-examples/tree/main)
   * [Example Repo Used in Get Started with Data Engineering on Databricks](https://github.com/databricks-academy/get-started-with-data-engineering-on-databricks-repo-example)
 * Notebooks:
   * [Quickstart Python](https://docs.databricks.com/en/mlflow/quick-start-python.html#)
@@ -113,16 +125,16 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_cluster_autotermination_minutes"></a> [cluster\_autotermination\_minutes](#input\_cluster\_autotermination\_minutes) | How many minutes before automatically terminating due to inactivity. | `number` | `60` | no |
 | <a name="input_cluster_create"></a> [cluster\_create](#input\_cluster\_create) | Whether to create the cluster. | `bool` | `false` | no |
-| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | A name for the cluster. | `string` | `"micro-cluster"` | no |
+| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | A name for the cluster. | `string` | `null` | no |
 | <a name="input_cluster_num_workers"></a> [cluster\_num\_workers](#input\_cluster\_num\_workers) | The number of workers. | `number` | `1` | no |
 | <a name="input_cluster_runtime_engine"></a> [cluster\_runtime\_engine](#input\_cluster\_runtime\_engine) | The runtime engine for the cluster. | `string` | `"STANDARD"` | no |
 | <a name="input_databricks_host"></a> [databricks\_host](#input\_databricks\_host) | The hostname for Databricks. | `string` | `"https://community.cloud.databricks.com"` | no |
-| <a name="input_databricks_password"></a> [databricks\_password](#input\_databricks\_password) | The password for Databricks. | `string` | n/a | yes |
-| <a name="input_databricks_username"></a> [databricks\_username](#input\_databricks\_username) | The username for Databricks. | `string` | n/a | yes |
-| <a name="input_library_pypi_packages"></a> [library\_pypi\_packages](#input\_library\_pypi\_packages) | A list of PyPI libraries to install. | `list(string)` | <pre>[<br>  "mlflow",<br>  "pandas"<br>]</pre> | no |
-| <a name="input_notebook_filename"></a> [notebook\_filename](#input\_notebook\_filename) | The notebook's filename. | `string` | `"notebook.py"` | no |
+| <a name="input_databricks_password"></a> [databricks\_password](#input\_databricks\_password) | The password for Databricks. | `string` | `null` | no |
+| <a name="input_databricks_username"></a> [databricks\_username](#input\_databricks\_username) | The username for Databricks. | `string` | `null` | no |
+| <a name="input_library_pypi_packages"></a> [library\_pypi\_packages](#input\_library\_pypi\_packages) | A list of PyPI libraries to install. | `list(string)` | `[]` | no |
+| <a name="input_notebook_filename"></a> [notebook\_filename](#input\_notebook\_filename) | The notebook's filename. | `string` | `null` | no |
 | <a name="input_notebook_language"></a> [notebook\_language](#input\_notebook\_language) | The language of the notebook. | `string` | `"PYTHON"` | no |
-| <a name="input_notebook_subdirectory"></a> [notebook\_subdirectory](#input\_notebook\_subdirectory) | A name for the subdirectory to store the notebook. | `string` | `"Terraform"` | no |
+| <a name="input_notebook_subdirectory"></a> [notebook\_subdirectory](#input\_notebook\_subdirectory) | A name for the subdirectory to store the notebook. | `string` | `null` | no |
 
 ## Outputs
 
