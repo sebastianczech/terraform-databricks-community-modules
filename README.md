@@ -113,16 +113,16 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_cluster_autotermination_minutes"></a> [cluster\_autotermination\_minutes](#input\_cluster\_autotermination\_minutes) | How many minutes before automatically terminating due to inactivity. | `number` | `60` | no |
 | <a name="input_cluster_create"></a> [cluster\_create](#input\_cluster\_create) | Whether to create the cluster. | `bool` | `false` | no |
-| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | A name for the cluster. | `string` | n/a | yes |
+| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | A name for the cluster. | `string` | `null` | no |
 | <a name="input_cluster_num_workers"></a> [cluster\_num\_workers](#input\_cluster\_num\_workers) | The number of workers. | `number` | `1` | no |
 | <a name="input_cluster_runtime_engine"></a> [cluster\_runtime\_engine](#input\_cluster\_runtime\_engine) | The runtime engine for the cluster. | `string` | `"STANDARD"` | no |
 | <a name="input_databricks_host"></a> [databricks\_host](#input\_databricks\_host) | The hostname for Databricks. | `string` | `"https://community.cloud.databricks.com"` | no |
-| <a name="input_databricks_password"></a> [databricks\_password](#input\_databricks\_password) | The password for Databricks. | `string` | n/a | yes |
-| <a name="input_databricks_username"></a> [databricks\_username](#input\_databricks\_username) | The username for Databricks. | `string` | n/a | yes |
-| <a name="input_library_pypi_packages"></a> [library\_pypi\_packages](#input\_library\_pypi\_packages) | A list of PyPI libraries to install. | `list(string)` | <pre>[<br>  "mlflow",<br>  "pandas"<br>]</pre> | no |
-| <a name="input_notebook_filename"></a> [notebook\_filename](#input\_notebook\_filename) | The notebook's filename. | `string` | `"notebook.py"` | no |
+| <a name="input_databricks_password"></a> [databricks\_password](#input\_databricks\_password) | The password for Databricks. | `string` | `null` | no |
+| <a name="input_databricks_username"></a> [databricks\_username](#input\_databricks\_username) | The username for Databricks. | `string` | `null` | no |
+| <a name="input_library_pypi_packages"></a> [library\_pypi\_packages](#input\_library\_pypi\_packages) | A list of PyPI libraries to install. | `list(string)` | `[]` | no |
+| <a name="input_notebook_filename"></a> [notebook\_filename](#input\_notebook\_filename) | The notebook's filename. | `string` | `null` | no |
 | <a name="input_notebook_language"></a> [notebook\_language](#input\_notebook\_language) | The language of the notebook. | `string` | `"PYTHON"` | no |
-| <a name="input_notebook_subdirectory"></a> [notebook\_subdirectory](#input\_notebook\_subdirectory) | A name for the subdirectory to store the notebook. | `string` | `"Terraform"` | no |
+| <a name="input_notebook_subdirectory"></a> [notebook\_subdirectory](#input\_notebook\_subdirectory) | A name for the subdirectory to store the notebook. | `string` | `null` | no |
 
 ## Outputs
 
