@@ -79,11 +79,27 @@ terraform test
   * [Databricks Terraform provider](https://registry.terraform.io/providers/databricks/databricks/latest/docs)
   * [Databricks Asset Bundles examples](https://github.com/databricks/bundle-examples/tree/main)
   * [Example Repo Used in Get Started with Data Engineering on Databricks](https://github.com/databricks-academy/get-started-with-data-engineering-on-databricks-repo-example)
+* Cloud:
+  * AWS:
+    * [Provisioning AWS Databricks workspace](https://registry.terraform.io/providers/databricks/databricks/latest/docs/guides/aws-workspace)
+    * [AWS Databricks documentation](https://docs.databricks.com/en/index.html)
+    * [Databricks on AWS](https://aws.amazon.com/solutions/partners/databricks/)
+    * [Databricks on AWS - Deployment Guide](https://aws-ia.github.io/cfn-ps-databricks-unified-data-analytics-platform/)
+    * [Databricks on the AWS Cloud—Quick Start](https://github.com/aws-ia/cfn-ps-databricks-unified-data-analytics-platform/)
+    * [AWS Databricks REST API reference](https://docs.databricks.com/api/workspace/introduction)
+  * Azure:
+    * [Deploying pre-requisite resources and enabling Private Link connections - Standard deployment](https://registry.terraform.io/providers/databricks/databricks/latest/docs/guides/azure-private-link-workspace-standard)
+    * [Azure Databricks](https://azure.microsoft.com/pl-pl/products/databricks)
+    * [Azure Databricks documentation](https://learn.microsoft.com/en-us/azure/databricks/)
+    * [Azure Databricks REST API reference](https://docs.databricks.com/api/azure/workspace/introduction)
 * Notebooks:
   * [Quickstart Python](https://docs.databricks.com/en/mlflow/quick-start-python.html#)
   * [MLflow example (Python)](https://docs.databricks.com/en/_extras/notebooks/source/mlflow/mlflow-quick-start-python.html)
 * Tools:
   * [Databricks CLI](https://docs.databricks.com/en/dev-tools/cli/install.html)
+* Generative AI (GenAI):
+  * [Generative AI and large language models (LLMs) on AWS Databricks](https://docs.databricks.com/en/generative-ai/generative-ai.html)
+  * [Generative AI and large language models (LLMs) on Azure Databricks](https://learn.microsoft.com/en-us/azure/databricks/generative-ai/generative-ai)
 * Trainings:
   * [Get Started with Databricks for Data Engineering](https://customer-academy.databricks.com/learn/course/2469/get-started-with-databricks-for-data-engineering)
   * [Generative AI Fundamentals](https://www.databricks.com/learn/training/generative-ai-fundamentals-accreditation)
