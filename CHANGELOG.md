@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1](https://github.com/sebastianczech/terraform-databricks-community-modules/compare/v1.1.0...v1.1.1) (2024-08-25)
+
+### Documentation
+
+* Links in README to Databricks in AWS and Azure clouds ([3e87ba2](https://github.com/sebastianczech/terraform-databricks-community-modules/commit/3e87ba2745d6e035ebe9cdd535741232e9abbec0))
+
 ## [1.1.0](https://github.com/sebastianczech/terraform-databricks-community-modules/compare/v1.0.0...v1.1.0) (2024-08-23)
 
 ### Features
