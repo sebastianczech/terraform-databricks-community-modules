@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.3](https://github.com/sebastianczech/terraform-databricks-community-modules/compare/v1.1.2...v1.1.3) (2024-11-02)
+
+### Miscellaneous Chores
+
+* Bump databricks/databricks from 1.52.0 to 1.55.0 ([#6](https://github.com/sebastianczech/terraform-databricks-community-modules/issues/6)) ([6eb99c6](https://github.com/sebastianczech/terraform-databricks-community-modules/commit/6eb99c600b28d493a1bfe7e2a4bdc47ed71ad904))
+
+### Continuous Integration
+
+* Add terrascan and update pre-commit settings ([#7](https://github.com/sebastianczech/terraform-databricks-community-modules/issues/7)) ([fe88da1](https://github.com/sebastianczech/terraform-databricks-community-modules/commit/fe88da10879145b66dc272809cc0514a753a3e30))
+
 ## [1.1.2](https://github.com/sebastianczech/terraform-databricks-community-modules/compare/v1.1.1...v1.1.2) (2024-10-02)
 
 ### Miscellaneous Chores
