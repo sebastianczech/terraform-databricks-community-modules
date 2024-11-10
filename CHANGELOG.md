@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.4](https://github.com/sebastianczech/terraform-databricks-community-modules/compare/v1.1.3...v1.1.4) (2024-11-10)
+
+### Miscellaneous Chores
+
+* Upgrade provider version ([#10](https://github.com/sebastianczech/terraform-databricks-community-modules/issues/10)) ([39e7b03](https://github.com/sebastianczech/terraform-databricks-community-modules/commit/39e7b03f21a7c7e5be181a709b3b42b2d49f6ef1))
+
+### Continuous Integration
+
+* Add gitleaks and trivy ([#8](https://github.com/sebastianczech/terraform-databricks-community-modules/issues/8)) ([e1574e8](https://github.com/sebastianczech/terraform-databricks-community-modules/commit/e1574e822ada2dbe964f0b37413366ca7d646690))
+* Add super linter ([#9](https://github.com/sebastianczech/terraform-databricks-community-modules/issues/9)) ([07af769](https://github.com/sebastianczech/terraform-databricks-community-modules/commit/07af7692526103f50f0ff89bf7766195260fdfaa))
+
 ## [1.1.3](https://github.com/sebastianczech/terraform-databricks-community-modules/compare/v1.1.2...v1.1.3) (2024-11-02)
 
 ### Miscellaneous Chores
