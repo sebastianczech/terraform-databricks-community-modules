@@ -1,12 +1,10 @@
 name: Upgrade dependencies
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write  # Required for pushing changes to the repository
 
 jobs:
   precommit:
