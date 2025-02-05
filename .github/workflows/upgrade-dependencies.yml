@@ -62,7 +62,7 @@ jobs:
         run: pre-commit run --all-files
 
       - name: Commit changes
-        if: steps.precommit.outcome == 'failure'
+        if: ${{ failure() && steps.precommit.conclusion == 'failure' }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
