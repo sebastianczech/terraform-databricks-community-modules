@@ -7,7 +7,7 @@ permissions:
   contents: write  # Required for pushing changes to the repository
 
 jobs:
-  upgrade_dependencies:
+  upgrade:
     name: Upgrade dependencies
     runs-on: ubuntu-latest
 
