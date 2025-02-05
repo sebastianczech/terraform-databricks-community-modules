@@ -3,12 +3,13 @@ name: Upgrade dependencies
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write  # Required for pushing changes to the repository
+
 jobs:
   upgrade_dependencies:
     name: Upgrade dependencies
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # Required for pushing changes to the repository
     if: github.repository_owner == 'sebastianczech'
     steps:
       - name: Checkout repository
