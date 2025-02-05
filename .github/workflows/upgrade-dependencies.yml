@@ -24,6 +24,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install pre-commit
 
+      - name: Install Trivy
+        run: |
+          sudo apt-get install wget apt-transport-https gnupg lsb-release
+          wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+          echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+          sudo apt-get update
+          sudo apt-get install trivy
+
+      - name: Terraform min/max versions
+        id: minMax
+        uses: clowdhaus/terraform-min-max@v1.3.1
+
+      - name: Install Terrascan
+        run: |
+          curl -L https://github.com/tenable/terrascan/releases/download/v1.19.9/terrascan_1.19.9_Linux_x86_64.tar.gz -o terrascan.tar.gz
+          tar -xzf terrascan.tar.gz terrascan
+          sudo mv terrascan /usr/local/bin/
+          terrascan init
+
       - name: Run pre-commit
         run: pre-commit run --all-files
 
