@@ -67,6 +67,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b upgrade-dependencies
+          git status
+          git diff
           git add .
           git commit -m "chore: Upgrade dependencies"
           git push origin upgrade-dependencies
