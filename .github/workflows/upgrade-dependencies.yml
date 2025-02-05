@@ -59,7 +59,7 @@ jobs:
 
       - name: Run pre-commit
         id: precommit
-        run: pre-commit run --all-files || true
+        run: pre-commit run --all-files
 
       - name: Commit changes
         if: steps.precommit.outcome == 'failure'
