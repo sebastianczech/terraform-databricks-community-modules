@@ -58,9 +58,11 @@ jobs:
           terraform_version: "1.9.3"
 
       - name: Run pre-commit
-        run: pre-commit run --all-files
+        id: precommit
+        run: pre-commit run --all-files || true
 
       - name: Commit changes
+        if: steps.precommit.outcome == 'failure'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
