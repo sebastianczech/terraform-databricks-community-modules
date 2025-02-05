@@ -7,7 +7,8 @@ permissions:
   contents: write  # Required for pushing changes to the repository
 
 jobs:
-  precommit:
+  upgrade_dependencies:
+    name: Upgrade dependencies
     runs-on: ubuntu-latest
 
     steps:
@@ -32,9 +33,19 @@ jobs:
           sudo apt-get update
           sudo apt-get install trivy
 
-      - name: Terraform min/max versions
-        id: minMax
-        uses: clowdhaus/terraform-min-max@v1.3.1
+     - name: Install terraform-docs
+        run: |
+          curl -sSLo terraform-docs.tar.gz https://github.com/terraform-docs/terraform-docs/releases/download/v0.19.0/terraform-docs-v0.19.0-linux-amd64.tar.gz
+          tar -xzf terraform-docs.tar.gz
+          sudo mv terraform-docs /usr/local/bin/
+          terraform-docs --version
+
+      - name: Install tflint
+        run: |
+          curl -sSLo tflint.zip https://github.com/terraform-linters/tflint/releases/download/v0.55.1/tflint_linux_amd64.zip
+          unzip tflint.zip
+          sudo mv tflint /usr/local/bin/
+          tflint --version
 
       - name: Install Terrascan
         run: |
@@ -42,6 +53,11 @@ jobs:
           tar -xzf terrascan.tar.gz terrascan
           sudo mv terrascan /usr/local/bin/
           terrascan init
+
+      - name: Setup Terraformtf
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.3"
 
       - name: Run pre-commit
         run: pre-commit run --all-files
