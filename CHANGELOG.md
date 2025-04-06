@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.9](https://github.com/sebastianczech/terraform-databricks-community-modules/compare/v1.1.8...v1.1.9) (2025-04-06)
+
+### Miscellaneous Chores
+
+* Bump databricks/databricks from 1.69.0 to 1.70.0 ([#23](https://github.com/sebastianczech/terraform-databricks-community-modules/issues/23)) ([43740e7](https://github.com/sebastianczech/terraform-databricks-community-modules/commit/43740e757b421bc6d4926f254c2d04b51a87e085))
+* Upgrade dependencies ([#24](https://github.com/sebastianczech/terraform-databricks-community-modules/issues/24)) ([158ded9](https://github.com/sebastianczech/terraform-databricks-community-modules/commit/158ded9ff8b3c447d99ab44cea9795fdb762ebcc))
+
 ## [1.1.8](https://github.com/sebastianczech/terraform-databricks-community-modules/compare/v1.1.7...v1.1.8) (2025-03-09)
 
 ### Miscellaneous Chores
